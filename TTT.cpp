@@ -29,7 +29,7 @@ void displayboard(char board[3][3], int selectedRow, int selectedCol){
 int main(){
 
 char board[3][3]={ 
-    {'1','2','3'},{'4','5','6'},{'7','8','9'}};
+    {' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
 
 char player='X';
 int selectedRow=0;
@@ -70,7 +70,7 @@ while(true)
     }
     else if(key == 13)
     {
-        if(board[selectedRow][selectedCol] >= '1' && board[selectedRow][selectedCol] <= '9')
+        if(board[selectedRow][selectedCol] == ' ')
         {
             board[selectedRow][selectedCol] = player;
 
@@ -117,8 +117,7 @@ if(won){
 bool full=true;
 for(int row=0; row <3; row++){
     for(int col=0; col<3; col++){
-        if(board[row][col]>='1'&&
-        board[row][col]<='9')
+        if(board[row][col]==' ')
         {
             full=false;
             break;
